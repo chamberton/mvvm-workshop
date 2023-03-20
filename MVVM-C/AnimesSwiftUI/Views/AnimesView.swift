@@ -15,11 +15,15 @@ struct AnimesView: SwiftUI.View {
     var body: some SwiftUI.View {
         NavigationView {
             if let animes = viewModel.animes {
-                List(animes, id: \.name) { animeItem in
-                    NavigationLink(destination: viewModel.loadView(for: animeItem)) {
-                        Text(animeItem.name)
-                    }
-                }.navigationTitle("Animes")
+                if animes.isEmpty {
+                    Text("No animees found").bold().navigationTitle("Animes")
+                } else {
+                    List(animes, id: \.name) { animeItem in
+                        NavigationLink(destination: viewModel.loadView(for: animeItem)) {
+                            Text(animeItem.name)
+                        }
+                    }.navigationTitle("Animes")
+                }
             } else if let message = viewModel.errorMessage {
                 EmptyView().alert(isPresented: viewModel.$inErrorState) {
                     makeErrorView(reason: message,title: nil, retryHandler: ("Retry", {[self] in

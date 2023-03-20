@@ -24,7 +24,7 @@ In a world where toys come to life in the absence of humans, a group of toys is 
     ]
     
     func getAllAnimes() -> [AnimeModel]? {
-        return data
+        return []
     }
     
     func getAnime(by id: Int) -> AnimeModel? {

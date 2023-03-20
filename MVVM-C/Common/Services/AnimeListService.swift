@@ -40,7 +40,6 @@ class AnimeListServiceImplementation : AnimeListService {
                     continuation.resume(throwing: AnimeServiceError.failed)
                 }
             }
-            
         }
     }
 
