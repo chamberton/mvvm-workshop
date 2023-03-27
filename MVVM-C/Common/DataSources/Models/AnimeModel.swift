@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AnimeModel {
+struct AnimeModel: Codable {
     var name : String
     var image : String
     var description : String
