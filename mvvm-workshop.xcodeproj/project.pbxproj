@@ -22,6 +22,7 @@
 		24FD17E029D1A2A300F36906 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 24FD17DF29D1A2A300F36906 /* user.json */; };
 		24FD17E229D1AA8B00F36906 /* AsynchronousUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FD17E129D1AA8B00F36906 /* AsynchronousUnitTests.swift */; };
 		24FD17E429D1B2D700F36906 /* document.txt in Resources */ = {isa = PBXBuildFile; fileRef = 24FD17E329D1B2D700F36906 /* document.txt */; };
+		24FD17E629D1DB1300F36906 /* AnimeListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FD17E529D1DB1300F36906 /* AnimeListViewModelTests.swift */; };
 		4A597ADC216F6C8D00D4A36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A597ADB216F6C8D00D4A36D /* AppDelegate.swift */; };
 		4A597AE1216F6C8D00D4A36D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A597ADF216F6C8D00D4A36D /* Main.storyboard */; };
 		4A597AE3216F6C8E00D4A36D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A597AE2216F6C8E00D4A36D /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		24FD17DF29D1A2A300F36906 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		24FD17E129D1AA8B00F36906 /* AsynchronousUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousUnitTests.swift; sourceTree = "<group>"; };
 		24FD17E329D1B2D700F36906 /* document.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = document.txt; sourceTree = "<group>"; };
+		24FD17E529D1DB1300F36906 /* AnimeListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeListViewModelTests.swift; sourceTree = "<group>"; };
 		4A597AD8216F6C8D00D4A36D /* MVVM-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A597ADB216F6C8D00D4A36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A597AE0216F6C8D00D4A36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				24FD17DF29D1A2A300F36906 /* user.json */,
 				24FD17D629D1A1FF00F36906 /* MVVM_CTests.swift */,
 				24FD17E129D1AA8B00F36906 /* AsynchronousUnitTests.swift */,
+				24FD17E529D1DB1300F36906 /* AnimeListViewModelTests.swift */,
 			);
 			path = "MVVM-CTests";
 			sourceTree = "<group>";
@@ -241,7 +244,6 @@
 				249108BA29C7DD5E00D99B90 /* AnimesAbstractions.swift */,
 				4A597AFB21708D4600D4A36D /* Coordinators */,
 				4A597AFA21708D3200D4A36D /* Views */,
-				4A597AF921708D0D00D4A36D /* ViewModels */,
 			);
 			path = Animes;
 			sourceTree = "<group>";
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				4A597B1C2170EAF000D4A36D /* AnimeDetailViewController.swift */,
+				4A597AF921708D0D00D4A36D /* ViewModels */,
 				4A597B072170B67700D4A36D /* AnimeListViewController.swift */,
 			);
 			path = Views;
@@ -409,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24FD17E629D1DB1300F36906 /* AnimeListViewModelTests.swift in Sources */,
 				24FD17D729D1A1FF00F36906 /* MVVM_CTests.swift in Sources */,
 				24FD17E229D1AA8B00F36906 /* AsynchronousUnitTests.swift in Sources */,
 			);
@@ -658,6 +662,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "MVVM-C/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

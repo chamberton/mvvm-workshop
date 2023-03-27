@@ -3,7 +3,6 @@
 //  MVVM-CTests
 //
 //  Created by Serge Mbamba on 2023/03/27.
-//  Copyright © 2023 Osama Bin Bashir. All rights reserved.
 //
 
 import XCTest
@@ -16,14 +15,28 @@ struct SomeTestDependency {
 class ExampleTests: XCTestCase {
     private var someSutDependency: SomeTestDependency!
 
-    override func setUpWithError() throws {
-        try super.setUpWithError()
+    override func setUp() {
+        super.setUp()
         someSutDependency = SomeTestDependency()
     }
-
+    
+    override func tearDown() {
+        someSutDependency = nil
+        super.tearDown()
+    }
+    
+    func test_Swift_LowerCasing() {
+        let nameCapitalized = "Nina"
+        let nameAllCaps = "NINb"
+       
+        XCTAssertTrue(nameAllCaps.lowercased() == nameCapitalized.lowercased())
+        XCTAssertEqual(nameAllCaps.lowercased(), nameCapitalized.lowercased())
+    }
+    
+    
     func testFirstNameNotEmpty() throws {
         let presencesByNames = ["Antoine": true, "Bob": false]
-        /// Will throw if presencesByNames["Antoine"] is null
+        
         let isAntoinePresent =  try XCTUnwrap(presencesByNames["Antoine"])
         XCTAssertTrue(isAntoinePresent)
     }
@@ -40,10 +53,6 @@ class ExampleTests: XCTestCase {
         XCTAssertNoThrow(try JSONDecoder().decode(AnimeModel.self, from: jsonData))
     }
 
-    override func tearDown() {
-        someSutDependency = nil
-        super.tearDown()
-    }
 
 }
 

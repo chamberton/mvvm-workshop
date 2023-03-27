@@ -3,7 +3,6 @@
 //  MVVM-CTests
 //
 //  Created by Serge Mbamba on 2023/03/27.
-//  Copyright © 2023 Osama Bin Bashir. All rights reserved.
 //
 
 import XCTest
@@ -42,7 +41,7 @@ final class AsynchronousUnitTests: XCTestCase {
     func testDocumentOpening() throws {
         // Create an expectation object.
         // This test only has one, but it's possible to wait on multiple expectations.
-        let documentOpenExpectation = expectation(description: "document open")
+        let documentOpenExpectation = XCTestExpectation(description: "Document open")
     
     
         guard let url = Bundle(for: Self.self).url(forResource: "document", withExtension: "txt") else {
@@ -63,8 +62,7 @@ final class AsynchronousUnitTests: XCTestCase {
             documentOpenExpectation.fulfill()
         }
      
-        waitForExpectations(timeout: TimeInterval(1)) {_ in
-            doc.close()
-        }
+    
+        wait(for: [documentOpenExpectation], timeout: TimeInterval(2))
     }
 }
